@@ -127,24 +127,24 @@ Nunca imaginé que un encuentro casual podría cambiar tanto mi vida. Al princip
       <p>Atentamente: Lau💕</p>
   </footer>
 
-   <script>
+  <script>
   // Fecha de inicio
-  const startDate = new Date(2024, 0, 30); // Fecha de inicio, 30 de enero de 2024
+  const startDate = new Date(2024, 0, 30); // Fecha de inicio: 30 de enero de 2024
 
   function updateCounter() {
     const currentDate = new Date(); // Fecha y hora actuales
-    const delta = currentDate - startDate; // Diferencia entre las fechas
+    const delta = currentDate - startDate; // Diferencia en milisegundos entre la fecha actual y la de inicio
 
     // Calcula los días, horas, minutos y segundos
-    const days = Math.floor(delta / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((delta % (1000 * 60)) / 1000);
+    const days = Math.floor(delta / (1000 * 60 * 60 * 24)); // Días completos
+    const hours = Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Horas restantes
+    const minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60)); // Minutos restantes
+    const seconds = Math.floor((delta % (1000 * 60)) / 1000); // Segundos restantes
 
     // Muestra el resultado en el HTML
     document.getElementById('counter').innerHTML = `
       Han pasado <strong>${days}</strong> días, <strong>${hours}</strong> horas, 
-      <strong>${minutes}</strong> minutos, y <strong>${seconds}</strong> segundos 
+      <strong>${minutes}</strong> minutos y <strong>${seconds}</strong> segundos
       desde el <strong>${startDate.toLocaleDateString()}</strong>.
     `;
   }
@@ -152,6 +152,7 @@ Nunca imaginé que un encuentro casual podría cambiar tanto mi vida. Al princip
   // Llama a la función cada segundo para actualizar el contador
   setInterval(updateCounter, 1000);
 </script>
+
 
 </body>
 </html>
