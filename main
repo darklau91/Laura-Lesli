@@ -1,27 +1,29 @@
-from flask import Flask, render_template
-from datetime import datetime
-from babel.dates import format_date
-import locale
+import express from 'express';
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
 
-app = Flask(__name__)
+const app = express();
 
-# Fecha de inicio del contador
-start_date = datetime(2024, 1, 30)
+// Fecha de inicio del contador
+const startDate = new Date(2024, 0, 30); // January is 0 in JavaScript
 
-@app.route('/')
-def home():
-    # Fecha actual
-    current_date = datetime.now()
+app.get('/', (req, res) => {
+    // Fecha actual
+    const currentDate = new Date();
 
-    # Calcula la diferencia en días
-    delta = current_date - start_date
-    days_passed = delta.days
+    // Calcula la diferencia en días
+    const delta = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
+    const daysPassed = delta;
 
-    # Formatear la fecha en español usando Babel
-    start_date_str = format_date(start_date, locale='es_ES')
+    // Formatear la fecha en español
+    const startDateStr = format(startDate, 'PPP', { locale: es });
 
-    # Renderiza el archivo HTML con las variables
-    return render_template('index.html', days_passed=days_passed, start_date=start_date_str)
+    // Renderiza el archivo HTML con las variables
+    res.render('index', { days_passed: daysPassed, start_date: startDateStr });
+});
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+const PORT = 8080;
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:${PORT}`);
+});
+
