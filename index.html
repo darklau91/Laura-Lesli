@@ -14,7 +14,7 @@
     <section class="highlighted-section">
         <h1>💖 Hoy celebramos nuestro amor 💖</h1>
          <main>
-      <p>Han pasado <strong id="days-passed">0</strong> días desde el <strong id="start-date">30 de enero de 2024</strong>.</p>
+      <p>Han pasado>  <p id="counter"></p> </strong> días desde el <strong id="start-date">30 de enero de 2024</strong>.</p>
       <p>👭 ¡Vamos por muchos más días, meses y años juntas! 👭</p>
     </main>
         <hr style="border: none; height: 3px; background: linear-gradient(to right, black, red); margin: 30px 0;">
@@ -128,25 +128,30 @@ Nunca imaginé que un encuentro casual podría cambiar tanto mi vida. Al princip
   </footer>
 
    <script>
-    // Fecha de inicio del contador
-    const startDate = new Date(2024, 0, 30); // Enero es 0 en JavaScript
+  // Fecha de inicio
+  const startDate = new Date(2024, 0, 30); // Fecha de inicio, 30 de enero de 2024
 
-    // Función para calcular los días transcurridos
-    function calculateDaysPassed() {
-      const currentDate = new Date();
-      const delta = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
-      return delta;
-    }
+  function updateCounter() {
+    const currentDate = new Date(); // Fecha y hora actuales
+    const delta = currentDate - startDate; // Diferencia entre las fechas
 
-    // Función para formatear la fecha
-    function formatStartDate() {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      return startDate.toLocaleDateString('es-ES', options);
-    }
+    // Calcula los días, horas, minutos y segundos
+    const days = Math.floor(delta / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((delta % (1000 * 60)) / 1000);
 
-    // Insertar los valores en el HTML
-    document.getElementById('days-passed').textContent = calculateDaysPassed();
-    document.getElementById('start-date').textContent = formatStartDate();
-  </script>
+    // Muestra el resultado en el HTML
+    document.getElementById('counter').innerHTML = `
+      Han pasado <strong>${days}</strong> días, <strong>${hours}</strong> horas, 
+      <strong>${minutes}</strong> minutos, y <strong>${seconds}</strong> segundos 
+      desde el <strong>${startDate.toLocaleDateString()}</strong>.
+    `;
+  }
+
+  // Llama a la función cada segundo para actualizar el contador
+  setInterval(updateCounter, 1000);
+</script>
+
 </body>
 </html>
