@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 1 Año Juntas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>💞 Laura & Lesli 💞</h1>
+    <p>Un año lleno de amor, aprendizajes y momentos únicos.</p>
+  </header>
+    <section class="highlighted-section">
+        <h1>💖 Hoy celebramos nuestro amor 💖</h1>
+        <main>
+            <p>Han pasado <strong>{{ days_passed }}</strong> días desde el <strong>{{ start_date }}</strong>.</p>
+            <p>
+                👭 ¡Vamos por muchos más días, meses y años juntas! 👭
+            </p>
+        </main>
+        <hr style="border: none; height: 3px; background: linear-gradient(to right, black, red); margin: 30px 0;">
+    </section>
+
+
+       <section>
+        <p style="text-align: center;line-height: 1.6">
+         Cada foto es un momento único, una imagen que captura un pedacito de nuestra historia juntas... son recuerdos que atesoro profundamente en mi corazón. Estas fotos representan un poco de nuestra aventura, la magia de estar juntas, y el amor que crece día a día. ¡Gracias por cada uno de estos momentos, mi amor! ¡Aún nos queda mucho por vivir y muchas más fotos que tomar! ❤️
+
+      </p>
+          <hr style="border: none; height: 3px; background: linear-gradient(to right, black, red); margin: 30px 0;">
+          </section>
+
+      <section>
+          <div class="gallery">
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='1.jpg') }}" alt="Descripción de la foto 1">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='2.jpg') }}" alt="Descripción de la foto 2">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='13.jpg') }}" alt="Descripción de la foto 3">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='4.webp') }}" alt="Descripción de la foto 4">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='5.webp') }}" alt="Descripción de la foto 5">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='6.webp') }}" alt="Descripción de la foto 6">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='7.webp') }}" alt="Descripción de la foto 7">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='8.webp') }}" alt="Descripción de la foto 8">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='9.jpg') }}" alt="Descripción de la foto 9">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='10.jpg') }}" alt="Descripción de la foto 10">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='11.jpg') }}" alt="Descripción de la foto 11">
+              </div>
+              <div class="photo">
+                  <img src="{{ url_for('static', filename='12.jpg') }}" alt="Descripción de la foto 12">
+              </div>
+          </div>
+
+        </section>
+        <section>
+<hr style="border: none; height: 3px; background: linear-gradient(to right, black, red); margin: 30px 0;">
+    </section>
+
+  <section>
+    <p style="text-align: center;line-height: 1.6">
+
+Nunca imaginé que un encuentro casual podría cambiar tanto mi vida. Al principio, tenía miedo de dar ese paso, de abrir mi corazón, pero contigo todo fue diferente. Me llenaste de calma, de risas y de una seguridad que nunca había sentido. A pesar de mis miedos, siempre supe que había algo especial en ti, algo que no podía ignorar. Cada sonrisa tuya, cada palabra y cada gesto han llenado mi vida de amor, tranquilidad y felicidad. Este espacio es solo un reflejo de lo que siento por ti: un lugar lleno de recuerdos, momentos únicos. Eres mi mayor bendición, mi paz en medio del caos. Gracias por hacer de estos meses juntas los más hermosos de mi vida. Te amo infinitamente, y este solo es el comienzo de nuestra historia.❤️</p>
+
+    <hr style="border: none; height: 3px; background: linear-gradient(to right, black, red); margin: 30px 0;">
+  </section>
+  <section>
+  <div class="container">
+    <p><strong>
+      Esta playlist está llena de canciones que me recuerdan a ti, a nuestra historia y a todo lo que aún nos espera. </strong> 
+    <div class="spotify-player">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3Hl9mUN4ewncH7yE1K19Xl?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <script>
+        function startSpotify() {
+            const iframe = document.querySelector('.spotify-player iframe');
+            iframe.src = iframe.src + "&autoplay=1";
+        }
+    </script>
+
+    </section>
+
+    <section >
+      <hr style="border: none; height: 3px; background: linear-gradient(to right, black, red); margin: 30px 0;">
+      <h2 style="text-align: center; font-size: 24px; margin-bottom: 20px;">
+
+        12 Mensajes, 12 Meses</h2>
+
+      <div>
+        <p><strong>1 Febrero:</strong> Tu sonrisa iluminó mis días.</p>
+        <p><strong>2 Marzo:</strong> En cada abrazo, me sentí más cerca de ti.</p>
+        <p><strong>3 Abril:</strong> Cada conversación nos hizo más fuertes y nos acercó más.</p>
+        <p><strong>4 Mayo:</strong> A tu lado, los días son más felices, y los momentos más hermosos.</p>
+        <p><strong>5 Junio:</strong> Las pequeñas cosas, como tu risa, hacen grande mi amor por ti.</p>
+        <p><strong>6 Julio:</strong> El primer "TE AMO" fue tan especial, y cada uno desde entonces lo ha sido aún más.</p>
+        <p><strong>7 Agosto:</strong> Las risas, los silencios compartidos: cada momento a tu lado es un regalo.</p>
+        <p><strong>8 Septiembre:</strong> Cada día me siento más afortunada de tenerte en mi vida.</p>
+        <p><strong>9 Octubre:</strong> Nuestro amor crece y se fortalece con cada desafío que superamos juntas.</p>
+        <p><strong>10 Noviembre:</strong> Los recuerdos que hemos creado juntas son los más hermosos de mi vida.</p>
+        <p><strong>11 Diciembre:</strong> Gracias por regalarme este mes, por hacerme sentir tan especial </p>
+        <p><strong>12 Enero:</strong> Gracias por hacer de este año el mejor de mi vida. Espero que este regalo refleje todo lo que eres y lo que significas para mí. ¡Aún nos queda mucho por vivir! ❤️</p>
+          </div>
+      </div>
+
+      <!-- Separador con gradiente negro a rojo -->
+      <hr style="border: none; height: 3px; background: linear-gradient(to right, black, red); margin: 30px 0;">
+    </section>
+  <footer>
+    <p>Creado con amor, solo para ti</p>
+      <p>Atentamente: Lau💕</p>
+  </footer>
+</body>
+</html>
