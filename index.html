@@ -127,7 +127,7 @@ Nunca imaginé que un encuentro casual podría cambiar tanto mi vida. Al princip
       <p>Atentamente: Lau💕</p>
   </footer>
 
-  <script>
+ <script>
   // Fecha de inicio
   const startDate = new Date(2024, 0, 30); // Fecha de inicio: 30 de enero de 2024
 
@@ -141,11 +141,10 @@ Nunca imaginé que un encuentro casual podría cambiar tanto mi vida. Al princip
     const minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60)); // Minutos restantes
     const seconds = Math.floor((delta % (1000 * 60)) / 1000); // Segundos restantes
 
-    // Muestra el resultado en el HTML
+    // Muestra el resultado en el HTML sin la fecha de inicio
     document.getElementById('counter').innerHTML = `
       Han pasado <strong>${days}</strong> días, <strong>${hours}</strong> horas, 
       <strong>${minutes}</strong> minutos y <strong>${seconds}</strong> segundos
-      desde el <strong>${startDate.toLocaleDateString()}</strong>.
     `;
   }
 
