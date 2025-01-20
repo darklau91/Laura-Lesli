@@ -13,10 +13,10 @@
   </header>
     <section class="highlighted-section">
         <h1>💖 Hoy celebramos nuestro amor 💖</h1>
-         <main>
-      <p>Han pasado>  <p id="counter"></p> </strong> días desde el <strong id="start-date">30 de enero de 2024</strong>.</p>
-      <p>👭 ¡Vamos por muchos más días, meses y años juntas! 👭</p>
-    </main>
+        <main>
+  <p>Han pasado <strong><span id="counter"></span></strong> desde el <strong>30 de enero de 2024</strong>.</p>
+  <p>👭 ¡Vamos por muchos más días, meses y años juntas! 👭</p>
+</main>
         <hr style="border: none; height: 3px; background: linear-gradient(to right, black, red); margin: 30px 0;">
     </section>
 
@@ -141,11 +141,8 @@ Nunca imaginé que un encuentro casual podría cambiar tanto mi vida. Al princip
     const minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60)); // Minutos restantes
     const seconds = Math.floor((delta % (1000 * 60)) / 1000); // Segundos restantes
 
-    // Muestra el resultado en el HTML sin la fecha de inicio
-    document.getElementById('counter').innerHTML = `
-      Han pasado <strong>${days}</strong> días, <strong>${hours}</strong> horas, 
-      <strong>${minutes}</strong> minutos y <strong>${seconds}</strong> segundos
-    `;
+    // Muestra el resultado en el HTML dentro de #counter
+    document.getElementById('counter').innerHTML = `${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos`;
   }
 
   // Llama a la función cada segundo para actualizar el contador
